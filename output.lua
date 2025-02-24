@@ -1338,7 +1338,7 @@ Window = Fluent:CreateWindow({
     Theme = "Luffy",
     MinimizeKey = Enum.KeyCode.LeftControl 
 })
-Shop = Window:AddTab({ Title = "Tab Shop", Icon = "" })
+Shop = Window:AddTab({ Title = "Cửa hàng", Icon = "" })
 sex = {
     "WildDares",
     "BossBuild",
@@ -1363,7 +1363,7 @@ sex = {
     "EARN_FRUITS",
 }
 Shop:AddButton({
-    Title = "Redeem Code",
+    Title = "Kích hoạt tất cả Code (trừ code private)",
     Callback = function()
         function RedeemCode(Value)
             game:GetService("ReplicatedStorage").Remotes.Redeem:InvokeServer(Value)
@@ -1380,7 +1380,7 @@ Shop:AddButton({
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local CommF_Remote = ReplicatedStorage:WaitForChild("Remotes"):WaitForChild("CommF_")
 Shop:AddButton({
-    Title = "Teleport Old World",
+    Title = "Teleport Sea 1",
     Callback = function()
         local success, result = pcall(function()
             return CommF_Remote:InvokeServer("TravelMain")
@@ -1393,7 +1393,7 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local Remotes = ReplicatedStorage:WaitForChild("Remotes")
 local CommF_Remote = Remotes:WaitForChild("CommF_")
 Shop:AddButton({
-    Title = "Teleport New World",
+    Title = "Teleport Sea 2",
     Callback = function()
         local success, result = pcall(function()
             return CommF_Remote:InvokeServer("TravelDressrosa")
@@ -1406,7 +1406,7 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local Remotes = ReplicatedStorage:WaitForChild("Remotes")
 local CommF_Remote = Remotes:WaitForChild("CommF_")
 Shop:AddButton({
-    Title = "Teleport Third Sea",
+    Title = "Teleport Sea 3",
     Callback = function()
         local success, result = pcall(function()
             return CommF_Remote:InvokeServer("TravelZou")
@@ -1416,7 +1416,7 @@ Shop:AddButton({
     end
 })
 Shop:AddParagraph({
-    Title = "Fighting Shop",
+    Title = "Cửa hàng Võ",
     Content = string.rep("-", 21)
 })
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
@@ -1539,7 +1539,7 @@ Shop:AddButton({
     end
 })
 Shop:AddParagraph({
-    Title = "Abilities Shop",
+    Title = "Cửa hàng Năng Lực",
     Content = string.rep("-", 21)
 })
 Shop:AddButton({
@@ -1567,25 +1567,25 @@ Shop:AddButton({
 	end
 })
 Shop:AddParagraph({
-    Title = "Misc Shop",
+    Title = "Cửa hàng điểm F",
     Content = string.rep("-", 21)
 })
 Shop:AddButton({
-     Title = "Buy Refund Stat (2500F)",
+     Title = "Mua Refund điểm Võ , Súng , Kiếm ,v.v.v(2500F)",
      Callback = function()            
          game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BlackbeardReward","Refund","1")
          game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BlackbeardReward","Refund","2")
      end
 })
 Shop:AddButton({
-     Title = "Buy Reroll Race (3000F)",
+     Title = "Mua Reroll Tộc (3000F)",
      Callback = function()            
          game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BlackbeardReward","Reroll","1")
 	     game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BlackbeardReward","Reroll","2")
      end
 })
 Shop:AddButton({
-    Title = "Buy Ghoul Race",
+    Title = "Mua Ghoul Tộc",
     Callback = function()
         local args1 = {[1] = "Ectoplasm", [2] = "BuyCheck", [3] = 4}
         local args2 = {[1] = "Ectoplasm", [2] = "Change", [3] = 4}
@@ -1595,7 +1595,7 @@ Shop:AddButton({
     end
 })
 Shop:AddButton({
-    Title = "Buy Cyborg Race (2500F)",
+    Title = "Mua Cyborg Tộc (2500F)",
     Callback = function()
         if not isBuying then
             isBuying = true
@@ -1606,9 +1606,9 @@ Shop:AddButton({
         end
     end
 })
-Server = Window:AddTab({ Title = "Tab Status And Server", Icon = "" })
+Server = Window:AddTab({ Title = "Trạng thái Máy Chủ", Icon = "" })
 Time = Server:AddParagraph({
-    Title = "Time Zone",
+    Title = "Múi giờ",
     Content = ""
 })
 function UpdateOS()
@@ -1643,7 +1643,7 @@ spawn(function()
     end
 end)
 Timmessss = Server:AddParagraph({
-    Title = "Time",
+    Title = "Thời gian",
     Content = ""
 })
 function UpdateTime()
@@ -1660,7 +1660,7 @@ spawn(function()
     end
 end)
 Miragecheck = Server:AddParagraph({
-    Title = "Mirage Island",
+    Title = "Đảo bí ẩn",
     Content = "Status: "
 })
 local previousStatus = ""
@@ -1678,7 +1678,7 @@ spawn(function()
     end)
 end)
 Kitsunecheck = Server:AddParagraph({
-    Title = "Kitsune Island",
+    Title = "Đảo Kitsune",
     Content = "Status: "
 })
 spawn(function()
@@ -1692,7 +1692,7 @@ spawn(function()
     end
 end)
 CPrehistoriccheck = Server:AddParagraph({
-    Title = "Prehistoric Island",
+    Title = "Đảo núi lửa",
     Desc = "Status: "
 })
 task.spawn(function()
@@ -1800,30 +1800,30 @@ task.spawn(function()
     end
 end)
 LegendarySword = Server:AddParagraph({
-    Title = "Legendary Sword",
+    Title = "NPC bán kiếm huyền thoại",
     Content = "Status: "
 })
 spawn(function()
     local previousStatus = ""
     while wait(1) do
-        local swordStatus = "Not Found Legend Swords"
+        local swordStatus = "Không tìm thấy NPC bán kiếm huyền thoại"
         if game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("LegendarySwordDealer", "1") then
-            swordStatus = "Shisui"
+            swordStatus = "Đang bán Shisui"
         elseif game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("LegendarySwordDealer", "2") then
-            swordStatus = "Wando"
+            swordStatus = "Đang bán Wando"
         elseif game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("LegendarySwordDealer", "3") then
-            swordStatus = "Saddi"
+            swordStatus = "Đang bán Saddi"
         end
         LegendarySword:SetDesc(swordStatus)
     end
 end)
 StatusBone = Server:AddParagraph({
-    Title = "Bone",
+    Title = "Xương",
     Content = ""
 })
 spawn(function()
     while wait(1) do
-        StatusBone:SetDesc("You Have: " .. tostring(game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("Bones", "Check")) .. " Bones")
+        StatusBone:SetDesc("Bạn có " .. tostring(game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("Bones", "Check")) .. " Xương")
     end
 end)	        
 Input = Server:AddInput("Input", {
@@ -1962,24 +1962,6 @@ LGa:AddButton({
     end
 })
 LGa:AddButton({
-	Title = "Show Item",
-	Description = "I'm Still Fixing....",
-	Callback = function()	
-	end
-})
-LGa:AddButton({
-    Title = "Open Devil Fruit Shop [ Mirage ]",
-    Description = "I'm Still Fixing....",
-    Callback = function()     
-    end
-})
-LGa:AddButton({
-    Title = "Open Devil Fruit Shop",
-    Description = "I'm Still Fixing....",
-    Callback = function()            
-    end
-})
-LGa:AddButton({
     Title = "Open Title",
     Callback = function()
         local args = {"getTitles"}
@@ -2058,7 +2040,7 @@ function FPSBooster()
     end
 end
 Dropdown = LGa:AddDropdown("Dropdown", {
-    Title = "Select Stats",
+    Title = "Chọn số liệu thống kê",
     Values = {"Melee", "Defense", "Sword", "Gun", "Fruit"},
     Multi = false,
 })
@@ -2088,7 +2070,7 @@ spawn(function()
     end
 end)
 Slider = LGa:AddSlider("Slider", {
-        Title = "Point Stats",
+        Title = "Thống kê điểm",
         Description = "",
         Default = 1,
         Min = 1,
@@ -2105,7 +2087,7 @@ end)
 local canChangeTeam = true
 local debounceTime = 2
 LGa:AddButton({
-    Title = "Change Team To Pirates",
+    Title = "Đổi đội thành Pirates",
     Callback = function()
         if not canChangeTeam then
             return
@@ -2121,7 +2103,7 @@ LGa:AddButton({
 local canChangeTeam = true
 local debounceTime = 2
 LGa:AddButton({
-    Title = "Change Team To Marines",
+    Title = "Thay đổi đội thành Marines",
     Callback = function()
         if not canChangeTeam then
             return
@@ -2148,7 +2130,7 @@ spawn(function()
         end
     end
 end)
-Toggle = LGa:AddToggle("Toggle", {Title = "Black Screen", Default = false })
+Toggle = LGa:AddToggle("Toggle", {Title = "Màn hình đen", Default = false })
 Toggle:OnChanged(function(Value)
 	getgenv().StartBlackScreen = Value
 end)
@@ -2166,7 +2148,7 @@ spawn(function()
         end
     end
 end)
-Toggle = LGa:AddToggle("Toggle", {Title = "White Screen", Default = false })
+Toggle = LGa:AddToggle("Toggle", {Title = "Màn hình trắng", Default = false })
 Toggle:OnChanged(function(Value)
     getgenv().WhiteScreen = Value
     if getgenv().WhiteScreen == true then
@@ -2175,7 +2157,7 @@ Toggle:OnChanged(function(Value)
         game:GetService("RunService"):Set3dRenderingEnabled(true)
     end
 end)
-Toggle = LGa:AddToggle("Toggle", {Title = "Hide Mob", Default = false })
+Toggle = LGa:AddToggle("Toggle", {Title = "Ẩn Mob", Default = false })
 Toggle:OnChanged(function(Value)
      getgenv().HideMob = Value		
 end)
@@ -2207,17 +2189,17 @@ spawn(function()
         end
     end
 end)
-Toggle = LGa:AddToggle("Toggle", {Title = "Remove Dame Text", Default = true })
+Toggle = LGa:AddToggle("Toggle", {Title = "Xóa hiện Dame", Default = true })
 Toggle:OnChanged(function(Value)
     getgenv().RemoveText = Value
     game:GetService("ReplicatedStorage").Assets.GUI.DamageCounter.Enabled = not getgenv().RemoveText
 end)
-Toggle = LGa:AddToggle("Toggle", {Title = "Remove Notification", Default = false })
+Toggle = LGa:AddToggle("Toggle", {Title = "Xóa thông báo", Default = false })
 Toggle:OnChanged(function(Value)
     getgenv().RemoveNotification = Value
     game.Players.LocalPlayer.PlayerGui.Notifications.Enabled = not getgenv().RemoveNotification
 end)
-Toggle = LGa:AddToggle("Toggle", {Title = "Auto Rejoin On Kick", Default = false })
+Toggle = LGa:AddToggle("Toggle", {Title = "Tự động tham gia lại khi bị Ki", Default = false })
 Toggle:OnChanged(function(Value)
     getgenv().AutoRejoinKick = Value
     if Value then
@@ -2234,7 +2216,7 @@ Toggle:OnChanged(function(Value)
     end
 end)
 LGa:AddButton({
-    Title = "Rain Fruit",
+    Title = "Mưa trái (ảo)",
     Callback = function()
         local fruitObjects = game:GetObjects("rbxassetid://14759368201")[1]:GetChildren()
         local maxFruits = 10
@@ -2262,7 +2244,7 @@ LGa:AddButton({
 })
 if World1 then
     Dropdown = LGa:AddDropdown("Dropdown", {
-        Title = "Select Island",
+        Title = "Chọn đảo",
         Values = {
             "WindMill", "Marine", "Middle Town", "Jungle", "Pirate Village", 
             "Desert", "Snow Island", "MarineFord", "Colosseum", "Sky Island 1", 
@@ -2279,7 +2261,7 @@ if World1 then
 end
 if World2 then
     Dropdown = LGa:AddDropdown("Dropdown", {
-        Title = "Select Island",
+        Title = "Chọn đảo",
         Values = {
             "The Cafe", "Frist Spot", "Dark Area", "Flamingo Mansion", "Flamingo Room", 
             "Green Zone", "Factory", "Colossuim", "Zombie Island", "Two Snow Mountain", 
@@ -2296,7 +2278,7 @@ if World2 then
 end
 if World3 then
     Dropdown = LGa:AddDropdown("Dropdown", {
-        Title = "Select Island",
+        Title = "Chọn đảo",
         Values = {
             "Mansion", "Port Town", "Great Tree", "Castle On The Sea", "MiniSky", 
             "Hydra Island", "Floating Turtle", "Haunted Castle", "Ice Cream Island", 
@@ -2310,7 +2292,7 @@ if World3 then
         getgenv().SelectIsland = Value
     end)
 end    
-Toggle = LGa:AddToggle("Toggle", {Title = "Teleport Island", Default = false })
+Toggle = LGa:AddToggle("Toggle", {Title = "Teleport đảo", Default = false })
 Toggle:OnChanged(function(Value)
     getgenv().TeleportIsland = Value
     if getgenv().TeleportIsland == true then
@@ -2415,7 +2397,7 @@ Toggle:OnChanged(function(Value)
         until not getgenv().TeleportIsland
     end
 end)
-Settings = Window:AddTab({ Title = "Setting Farm", Icon = "" })
+Settings = Window:AddTab({ Title = "Cài đặt Farm", Icon = "" })
 Dropdown = Settings:AddDropdown("DropdownFarm", {
     Title = "Select Weapon",
     Values = {"Melee","Sword","Blox Fruit"},
@@ -2446,7 +2428,7 @@ task.spawn(function()
         end)
     end
 end)
-Toggle = Settings:AddToggle("Toggle", {Title = "Auto Turn On Buso", Default = true })
+Toggle = Settings:AddToggle("Toggle", {Title = "Tự động bật Buso", Default = true })
 Toggle:OnChanged(function(Value)
     getgenv().AUTOHAKI = Value
 end)
@@ -2469,7 +2451,7 @@ spawn(function()
         end
     end
 end)
-Toggle = Settings:AddToggle("Toggle", { Title = "Auto Turn On Race V4", Default = false })
+Toggle = Settings:AddToggle("Toggle", { Title = "Tự động bật Tộc V4", Default = false })
 Toggle:OnChanged(function(Value)
     getgenv().AutoTurnOnV4 = Value
 end)
@@ -2494,7 +2476,7 @@ task.spawn(function()
         end
     end
 end)
-Toggle = Settings:AddToggle("Toggle", {Title = "Auto Turn On Race V3", Default = false })
+Toggle = Settings:AddToggle("Toggle", {Title = "Tự động bật Tộc V3", Default = false })
 Toggle:OnChanged(function(Value)
     getgenv().AutoTurnOnV3 = Value
 end)
@@ -2512,7 +2494,7 @@ task.spawn(function()
         end)
     end
 end)
-local Toggle = Settings:AddToggle("Toggle", {Title = "Auto Set Spawn Point", Default = false })
+local Toggle = Settings:AddToggle("Toggle", {Title = "Tự động thiết lập điểm hồi sinh", Default = false })
 local lastSetState = false
 Toggle:OnChanged(function(Value)
     getgenv().Set = Value
@@ -2547,7 +2529,7 @@ Toggle = Settings:AddToggle("Toggle", {Title = "Reset Teleport", Default = false
 Toggle:OnChanged(function(Value)
     BypassTP = Value 
 end)
-Toggle = Settings:AddToggle("Bypass TP", { Title = "Stop Reset Teleport When Have Legendary", Default = false })
+Toggle = Settings:AddToggle("Bypass TP", { Title = "Dừng Reset Teleport Khi Có Huyền Thoại", Default = false })
 Toggle:OnChanged(function(Value)
     getgenv().StopTP = Value
 end)
@@ -2561,7 +2543,7 @@ spawn(function()
 	end
 end)
 getgenv().FastAttack = false
-Toggle = Settings:AddToggle("Toggle", {Title = "Fast Attack", Default = true})
+Toggle = Settings:AddToggle("Toggle", {Title = "Đánh Nhanh", Default = true})
 local FastAttackTask
 local function FastAttackLoop()
     while getgenv().FastAttack do
@@ -2580,7 +2562,7 @@ Toggle:OnChanged(function(Value)
         FastAttackTask = nil
     end
 end)
-Toggle = Settings:AddToggle("Toggle", {Title = "Bring Mob", Default = true})
+Toggle = Settings:AddToggle("Toggle", {Title = "Gom Mob", Default = true})
 Toggle:OnChanged(function(Value)
     getgenv().BringMonster = Value
 end)
@@ -2642,7 +2624,7 @@ spawn(function()
         end)
     end
 end)
-Toggle = Settings:AddToggle("Toggle", {Title = "Spin Position", Description = "Spin Position When Farm", Default = true })
+Toggle = Settings:AddToggle("Toggle", {Title = "Vị trí quay", Description = "Vị trí quay khi Farm", Default = true })
 Toggle:OnChanged(function(Value)
     getgenv().SpinPos = Value
 end)
@@ -2662,7 +2644,7 @@ spawn(function()
     end
 end)
 Slider = Settings:AddSlider("Slider", {
-     Title = "Farm Distance",
+     Title = "Khoảng cách Farm",
      Default = 15,
      Min = 0,
      Max = 30,
@@ -2671,7 +2653,7 @@ Slider = Settings:AddSlider("Slider", {
          PosY = Value
     end
 })
-Toggle = Settings:AddToggle("Toggle", {Title = "Auto Reduce Lag Farm Safely", Default = true })
+Toggle = Settings:AddToggle("Toggle", {Title = "Tự động giảm Lag Farm an toàn", Default = true })
 Toggle:OnChanged(function(Value)
     getgenv().ReduceLag = Value
 end)
@@ -2688,7 +2670,7 @@ spawn(function()
         end
     end
 end)
-Toggle = Settings:AddToggle("Toggle", {Title = "Anti Cheat Farming", Description = "This feature helps you Farm safely without being detected", Default = true })
+Toggle = Settings:AddToggle("Toggle", {Title = "Anti Cheat Farming", Description = "Tính năng này giúp bạn Farm an toàn mà không bị phát hiện", Default = true })
 Toggle:OnChanged(function(Value)
     getgenv().ResetFlags = Value
 end)
