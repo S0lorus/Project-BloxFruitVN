@@ -16,8 +16,8 @@ local notificationCooldown = 10
 local currentTime = tick()
 if currentTime - lastNotificationTime >= notificationCooldown then
     game.StarterGui:SetCore("SendNotification", {
-        Title = "Hiru Hub",
-        Text = "Loading",
+        Title = "Src_hub_BloxFruit",
+        Text = "Loading....",
         Duration = 5
     })
     lastNotificationTime = currentTime
@@ -1330,7 +1330,7 @@ end
 print("--[[Loaded UI]]--")
 Fluent = loadstring(game:HttpGet("https://raw.githubusercontent.com/LuaCrack/Library/refs/heads/main/LibraryFluent.lua"))()
 Window = Fluent:CreateWindow({
-    Title = "Hiru Hub-Blox Fruit",
+    Title = "</>Fly Hub-BLOX FRUIT _ Premium-2.0.1",
     SubTitle = "by Kiddo",
     TabWidth = 155,
     Size = UDim2.fromOffset(555, 320),
@@ -7411,7 +7411,7 @@ task.spawn(function()
                             EquipWeapon("Tushita")
                         elseif not hasNotified then
                             game.StarterGui:SetCore("SendNotification", {
-                                Title = "Hiru Hub",
+                                Title = "Fly Hub",
                                 Text = "Use! - Yama or Tushita",
                                 con = "rbxassetid://11995210995",
                                 Duration = 10,
@@ -8052,7 +8052,7 @@ Button.Parent = ScreenGui
 Button.Size = UDim2.new(0, 50, 0, 50)
 Button.Position = UDim2.new(0.015, 0, 0.02, 20)
 Button.BackgroundTransparency = 1
-Button.Image = "rbxassetid://100310827714719"
+Button.Image = "rbxassetid://11228653710"
 local UICorner = Instance.new("UICorner")
 UICorner.CornerRadius = UDim.new(1, 0)
 UICorner.Parent = Button
@@ -8111,7 +8111,7 @@ local notificationCooldown = 10
 local currentTime = tick()
 if currentTime - lastNotificationTime >= notificationCooldown then
     game.StarterGui:SetCore("SendNotification", {
-        Title = "Hiru Hub",
+        Title = "Fly Hub",
         Text = "Successfully",
         Duration = 1
     })
