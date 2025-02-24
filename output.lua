@@ -1328,10 +1328,10 @@ function AttackNoCoolDown()
     end
 end
 print("--[[Loaded UI]]--")
-Fluent = loadstring(game:HttpGet("https://raw.githubusercontent.com/vinh12eqweaws/vvvs/refs/heads/main/caz"))()
+Fluent = loadstring(game:HttpGet("https://raw.githubusercontent.com/LuaCrack/Library/refs/heads/main/LibraryFluent.lua"))()
 Window = Fluent:CreateWindow({
-    Title = "</>Fly Hub-BLOX FRUIT _ Premium-2.0.1",
-    SubTitle = "by Kiddo",
+    Title = "</>Fly Hub-BLOX FRUIT</>",
+    SubTitle = "Premium",
     TabWidth = 155,
     Size = UDim2.fromOffset(555, 320),
     Acrylic = false, 
