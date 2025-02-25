@@ -2706,20 +2706,12 @@ spawn(function()
     end
 end)
 Main = Window:AddTab({ Title = "Tab Farming", Icon = "" })
-Main:AddButton({
-    Title = "Copy discord invite link",
-    Callback = function()
-        pcall(function()
-            setclipboard("https://discord.gg/2YCGftRB")
-        end)
-    end
-})
 Main:AddParagraph({
      Title = "Main Farm",
      Content = string.rep("-", 21)
 })
 Dropdown = Main:AddDropdown("DropdownFarm", {
-    Title = "Select Method Farm",
+    Title = "Chọn chế độ Farm",
     Values = {"Farm Level", "Farm Bone", "Farm Katakuri"},
     Multi = false,
 })
@@ -2974,13 +2966,13 @@ spawn(function()
         end
     end
 end)
-Toggle = Main:AddToggle("Toggle", { Title = "Start Farm", Default = false })
+Toggle = Main:AddToggle("Toggle", { Title = "Bắt đầu Farm", Default = false })
 Toggle:OnChanged(function(Value)
     getgenv().AutoFarm = Value
     StopTween(getgenv().AutoFarm)
 end)
 Main:AddParagraph({
-     Title = "Farming Material",
+     Title = "Farm Vật liệu",
      Content = string.rep("-", 21)
 })
 local MaterialList = {}
@@ -2992,14 +2984,14 @@ elseif World3 then
     MaterialList = {"Leather + Scrap Metal", "Demonic Wisp", "Conjured Cocoa", "Dragon Scale", "Gunpowder", "Fish Tail", "Mini Tusk"}
 end
 MaterialListMon = Main:AddDropdown("MaterialListMon", {
-    Title = "Select Material",
+    Title = "Chọn vật liệu",
     Values = MaterialList,
     Multi = false
 })
 MaterialListMon:OnChanged(function(Value)
     getgenv().SelectMaterial = Value
 end)
-Toggle = Main:AddToggle("Toggle", {Title = "Farm Material", Default = false})
+Toggle = Main:AddToggle("Toggle", {Title = "Farm Vật liệu", Default = false})
 Toggle:OnChanged(function(Value)
     getgenv().AutoMaterial = Value
     if not Value then StopTween() end
@@ -3053,7 +3045,7 @@ spawn(function()
     end
 end)
 Main:AddParagraph({
-     Title = "Mastery Farm",
+     Title = "Farm Mastery",
      Content = string.rep("-", 21)
 })
 Slider = Main:AddSlider("Slider", {
@@ -3067,7 +3059,7 @@ Slider = Main:AddSlider("Slider", {
     end
 })
 Dropdown = Main:AddDropdown("DropdownFarm", {
-    Title = "Select Method Farm Mastery",
+    Title = "Chọn phương pháp Farm Mastery",
     Values = {"Blox Fruit", "Gun"},
     Multi = false,
 })
@@ -3381,34 +3373,34 @@ spawn(function()
         end
     end)
 end)
-Toggle = Main:AddToggle("Toggle", { Title = "Auto Farm Mastery", Default = false })
+Toggle = Main:AddToggle("Toggle", { Title = "Tự động Farm Mastery", Default = false })
 Toggle:OnChanged(function(Value)
     getgenv().MasteryFarm = Value
     StopTween(getgenv().MasteryFarm)
 end)
-Toggle = Main:AddToggle("Toggle", {Title = "Skill Z", Default = true })
+Toggle = Main:AddToggle("Toggle", {Title = "Sử dụng Skill Z", Default = true })
 Toggle:OnChanged(function(Value)
     getgenv().SkillZ = Value
 end)
-Toggle = Main:AddToggle("Toggle", {Title = "Skill X", Default = false })
+Toggle = Main:AddToggle("Toggle", {Title = "Sử dụng Skill X", Default = false })
 Toggle:OnChanged(function(Value)
     getgenv().SkillX = Value
 end)
-Toggle = Main:AddToggle("Toggle", {Title = "Skill C", Default = false })
+Toggle = Main:AddToggle("Toggle", {Title = "Sử dụng Skill C", Default = false })
 Toggle:OnChanged(function(Value)
     getgenv().SkillC = Value
 end)
-Toggle = Main:AddToggle("Toggle", {Title = "Skill V", Default = false })
+Toggle = Main:AddToggle("Toggle", {Title = "Sử dụng Skill V", Default = false })
 Toggle:OnChanged(function(Value)
     getgenv().SkillV = Value
 end)
-Toggle = Main:AddToggle("Toggle", {Title = "Skill F", Default = false })
+Toggle = Main:AddToggle("Toggle", {Title = "Sử dụng Skill F", Default = false })
 Toggle:OnChanged(function(Value)
     getgenv().SkillF = Value
 end)
-Stack = Window:AddTab({ Title = "Tab Stack Farm", Icon = "" })
+Stack = Window:AddTab({ Title = "Farm đa dạng", Icon = "" })
 Dropdown = Stack:AddDropdown("DropdownFarm", {
-    Title = "Select Melee",
+    Title = "Chọn Melee",
     Values = {"Superhuman", "DeathStep", "Sharkman Karate", "Electric Claw", "Dragon Talon", "GodHuman"},
     Multi = false,
 })
@@ -3654,12 +3646,12 @@ spawn(function()
         end
     end)
 end)
-Toggle = Stack:AddToggle("Toggle", { Title = "Auto Get Melee", Default = false })
+Toggle = Stack:AddToggle("Toggle", { Title = "Tự động nhận Melee", Default = false })
 Toggle:OnChanged(function(Value)
     getgenv().AutoGetMelee = Value
     StopTween(getgenv().AutoGetMelee)
 end)
-Toggle = Stack:AddToggle("Toggle", {Title = "Teleport To Fruit", Default = false })
+Toggle = Stack:AddToggle("Toggle", {Title = "Teleport tới Fruit", Default = false })
 Toggle:OnChanged(function(Value)
     getgenv().TeleportToFruit = Value
     StopTween(getgenv().TeleportToFruit)
@@ -3682,7 +3674,7 @@ spawn(function()
         end
     end
 end)
-Toggle = Stack:AddToggle("Toggle", {Title = "Teleport To Fruit [ Hop Server ]", Default = false })
+Toggle = Stack:AddToggle("Toggle", {Title = "Teleport tới Fruit [ Hop Server ]", Default = false })
 Toggle:OnChanged(function(Value)
     getgenv().TeleportToFruitHop = Value
 end)
@@ -3817,7 +3809,7 @@ spawn(function()
         end
     end
 end)
-Toggle = Stack:AddToggle("Toggle", {Title = "Auto Factory", Default = false })
+Toggle = Stack:AddToggle("Toggle", {Title = "Auto đánh nhà Máy", Default = false })
 Toggle:OnChanged(function(Value)
     getgenv().AutoFactory = Value
     StopTween(getgenv().AutoFactory)
@@ -3841,7 +3833,7 @@ task.spawn(function()
         end
     end
 end)
-Toggle = Stack:AddToggle("Toggle", { Title = "Auto Pirate Raid", Default = false })
+Toggle = Stack:AddToggle("Toggle", { Title = "Auto đánh Raid", Default = false })
 Toggle:OnChanged(function(Value)
     getgenv().AutoPirateRaid = Value
     StopTween(getgenv().AutoPirateRaid)
@@ -3893,7 +3885,7 @@ Toggle:OnChanged(function(Value)
     getgenv().AutoEliteHunter = Value
     StopTween(getgenv().AutoEliteHunter)
 end)
-Toggle = Stack:AddToggle("Toggle", {Title = "Hop Server Elite Hunter", Description = "Find New Elite Hunter Server", Default = false })
+Toggle = Stack:AddToggle("Toggle", {Title = "Hop Server Elite Hunter", Description = "Tìm Server mới có Elite Hunter", Default = false })
 Toggle:OnChanged(function(Value)
     getgenv().AutoEliteHunterHop = Value
 end)
@@ -3988,7 +3980,7 @@ spawn(function()
         end)
     end
 end)
-Toggle = Stack:AddToggle("Toggle", {Title = "Auto Rip Indra", Default = false })
+Toggle = Stack:AddToggle("Toggle", {Title = "Auto đánh Rip Indra", Default = false })
 Toggle:OnChanged(function(Value)
     getgenv().AutoRipIndra = Value
     StopTween(getgenv().AutoRipIndra)
@@ -4028,7 +4020,7 @@ spawn(function()
         end
     end)
 end)
-Toggle = Stack:AddToggle("Toggle", {Title = "Auto Soul Reaper", Default = false })
+Toggle = Stack:AddToggle("Toggle", {Title = "Auto đánh Soul Reaper", Default = false })
 Toggle:OnChanged(function(Value)
     getgenv().AutoSoulReaper = Value
     StopTween(getgenv().AutoSoulReaper)
@@ -4111,7 +4103,7 @@ spawn(function()
         end
     end
 end)
-Toggle = Stack:AddToggle("Toggle", {Title = "Auto Dough King", Default = false })
+Toggle = Stack:AddToggle("Toggle", {Title = "Auto đánh Dough King", Default = false })
 Toggle:OnChanged(function(Value)
     getgenv().AutoDoughKing = Value
     StopTween(getgenv().AutoDoughKing)
@@ -4245,7 +4237,7 @@ spawn(function()
         end
     end
 end)
-Toggle = Stack:AddToggle("Toggle", {Title = "Auto Darkbeard", Default = false })
+Toggle = Stack:AddToggle("Toggle", {Title = "Auto đánh Darkbeard", Default = false })
 Toggle:OnChanged(function(Value)
     getgenv().AutoDarkbeard = Value
     StopTween(getgenv().AutoDarkbeard)
@@ -4282,13 +4274,13 @@ spawn(function()
         end
     end
 end)
-Other = Window:AddTab({ Title = "Tab Farming Other", Icon = "" })
+Other = Window:AddTab({ Title = "Farm Khác", Icon = "" })
 Other:AddParagraph({
         Title = "Quest Dragon",
         Content = ""
 })
 Other:AddButton({
-    Title = "Teleport To Dragon Dojo",
+    Title = "Teleport tới Dragon Dojo",
     Callback = function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance", Vector3.new(5661.5322265625, 1013.0907592773438, - 334.9649963378906))
         topos(CFrame.new(5814.42724609375, 1208.3267822265625, 884.5785522460938))
@@ -4455,7 +4447,7 @@ spawn(function()
         end
     end
 end)
-Toggle = Other:AddToggle("Toggle", {Title = "Stop When Have God's Chalice& Fist Of Darkness", Default = false })
+Toggle = Other:AddToggle("Toggle", {Title = "Dừng khi có Chén Thánh or Key Râu Đen", Default = false })
 Toggle:OnChanged(function(Value)
     getgenv().StopChest = Value
 end)
@@ -4499,7 +4491,7 @@ spawn(function()
         end)
     end
 end)
-Toggle = Other:AddToggle("Toggle", {Title = "Auto UP Observation V2", Default = false })
+Toggle = Other:AddToggle("Toggle", {Title = "Tự động quan sát UP V2", Default = false })
 Toggle:OnChanged(function(Value)
     getgenv().AutoObservationHakiV2 = Value
     StopTween(getgenv().AutoObservationHakiV2)
@@ -4738,7 +4730,7 @@ Dropdown = Other:AddDropdown("Dropdown", {
 Dropdown:OnChanged(function(Value)
     getgenv().SelectBoss = Value
 end)
-Toggle = Other:AddToggle("Toggle", {Title = "Auto Kill Boss", Default = getgenv().AutoFarmBoss })
+Toggle = Other:AddToggle("Toggle", {Title = "Auto Kill Boss đã chọn", Default = getgenv().AutoFarmBoss })
 Toggle:OnChanged(function(Value)
     getgenv().AutoFarmBoss = Value
     StopTween(getgenv().AutoFarmBoss)
@@ -4867,8 +4859,8 @@ spawn(function()
         end
     end
 end)
-Blog = Window:AddTab({ Title = "Tab Fruit And Raid", Icon = "" })
-Toggle = Blog:AddToggle("Toggle", {Title = "Random Devil Fruit", Default = false })
+Blog = Window:AddTab({ Title = "Fruit And Raid", Icon = "" })
+Toggle = Blog:AddToggle("Toggle", {Title = "Auto Random Fruit", Default = false })
 Toggle:OnChanged(function(Value)
     getgenv().RandomFruit = Value
 end)
@@ -4990,14 +4982,14 @@ FruitList = {
   "Dragon-Dragon"
  }
 Dropdown = Blog:AddDropdown("Dropdown", {
-    Title = "Blox Fruit Sniper Shop",
+    Title = "Fruit Shop",
     Values = FruitList,
     Multi = false,
 })
 Dropdown:OnChanged(function(Value)
     getgenv().SelectFruit = Value
 end)    
-Toggle = Blog:AddToggle("Toggle", {Title = "Buy Blox Fruit Sniper Shop", Default = false })
+Toggle = Blog:AddToggle("Toggle", {Title = "Buy Fruit đã chọn trong Shop", Default = false })
 Toggle:OnChanged(function(Value)
     getgenv().AutoBuyFruitSniper = Value
 end)
@@ -5027,7 +5019,7 @@ Dropdown = Blog:AddDropdown("Dropdown", {
 Dropdown:OnChanged(function(Value)
     getgenv().SelectChip = Value
 end)
-Toggle = Blog:AddToggle("Toggle", {Title = "Get Fruit In Inventory Low Beli", Default = false})
+Toggle = Blog:AddToggle("Toggle", {Title = "Auto lấy Fruit thấp beli trong túi để Raid", Default = false})
 Toggle:OnChanged(function(Value)
     getgenv().AutoGetFruit = Value
 end)
@@ -5139,7 +5131,7 @@ spawn(function()
         end)
     end
 end)
-Toggle = Blog:AddToggle("Toggle", {Title = "Auto Awaken Fruit", Default = false})
+Toggle = Blog:AddToggle("Toggle", {Title = "Auto thức tỉnh Fruit", Default = false})
 Toggle:OnChanged(function(Value)
     getgenv().AutoAwaken = Value
 end)
@@ -5171,9 +5163,9 @@ Blog:AddButton({
     end
 })
 end
-Sea = Window:AddTab({ Title = "Tab Sea Event", Icon = "" })
+Sea = Window:AddTab({ Title = "Sea Event", Icon = "" })
 SetSpeedBoatSlider = Sea:AddSlider("SliderSpeedBoat", {
-	Title = "Ship Speed",
+	Title = "Tốc độ Thuyền",
 	Default = 300,
 	Min = 0,
 	Max = 1000,
@@ -5195,7 +5187,7 @@ ListSeaZone = {
   "Zone 6"
 }
 zoneselect = Sea:AddDropdown("zoneselect", {
-	Title = "Select Zone",
+	Title = "Chọn vùng",
 	Values = ListSeaZone,
 	Multi = false,
 	Default = false,
@@ -5214,7 +5206,7 @@ ListSeaBoat = {
   "BeastHunter",
 }
 selectthuyen = Sea:AddDropdown("selectthuyen", {
-	Title = "Select Boat",
+	Title = "Chọn thuyền",
 	Values = ListSeaBoat,
 	Multi = false,
 	Default = false,
@@ -5223,7 +5215,7 @@ selectthuyen:OnChanged(function(value)
 	getgenv().SelectedBoat = value
 end)
 boattween = Sea:AddDropdown("boattween", {
-    Title = "Speed Tween Boat",
+    Title = "Tốc độ Thuyền",
     Values = {"180", "200", "250", "300", "325", "350"},
     Multi = false,
     Default = 300,
@@ -5280,7 +5272,7 @@ spawn(function()
         end
     end)
 end)
-Toggle = Sea:AddToggle("Toggle", {Title = "Auto Penetrate Rocks When Boat Runs", Default = true })
+Toggle = Sea:AddToggle("Toggle", {Title = "Auto đi xuyên đá khi thuyền chạy", Default = true })
 Toggle:OnChanged(function(Value)
     getgenv().GoThroughRocks = Value
 end)
@@ -5903,7 +5895,7 @@ Sea:AddParagraph({
         Title = "Kitsune Event",
         Content = string.rep("-", 21)
     })    
-Toggle = Sea:AddToggle("Toggle", {Title = "Teleport To Kitsune Island",Default = false })
+Toggle = Sea:AddToggle("Toggle", {Title = "Teleport tới đảo Kitsune",Default = false })
 Toggle:OnChanged(function(value)
     getgenv().TweenToKitsune = value
     StopTween(getgenv().TweenToKitsune)
@@ -5920,7 +5912,7 @@ spawn(function()
         end
     end
 end)
-Toggle = Sea:AddToggle("Toggle", {Title = "Auto Summon Soul EmBer",Default = false })
+Toggle = Sea:AddToggle("Toggle", {Title = "Auto triệu hồi EmBer",Default = false })
 Toggle:OnChanged(function(value)
     getgenv().SummonKitsume = value    
 end)
@@ -5938,7 +5930,7 @@ spawn(function()
         end
     end
 end)
-Toggle = Sea:AddToggle("Toggle", {Title = "Auto Collect Azure Wisp",Default = false })
+Toggle = Sea:AddToggle("Toggle", {Title = "Auto Thu thập Azure Wisp",Default = false })
 Toggle:OnChanged(function(value)
     getgenv().CollectAzure = value
     StopTween(getgenv().CollectAzure)
@@ -5974,7 +5966,7 @@ Slider = Sea:AddSlider("Slider", {
     end
 })
 Toggle = Sea:AddToggle("Toggle", {
-    Title = "Auto Trade Azure Ember",
+    Title = "Auto trao đổi Azure Ember",
     Default = false,
     Callback = function (state)
         getgenv().TradeAureEmber = state
@@ -6005,7 +5997,7 @@ task.spawn(function()
 end)
            
 Sea:AddButton({
-    Title = "Trade Azure Wisp",
+    Title = "Trao đổi Azure Wisp",
     Callback = function()            
         game:GetService("ReplicatedStorage"):WaitForChild("Modules"):WaitForChild("Net"):WaitForChild("RF/KitsuneStatuePray"):InvokeServer()
     end
@@ -6020,7 +6012,7 @@ Sea:AddButton({
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("InfoLeviathan", "2")
     end
 })    
-Toggle = Sea:AddToggle("Toggle", {Title = "Teleport To Frozen Dimension", Default = false })
+Toggle = Sea:AddToggle("Toggle", {Title = "Teleport tới Frozen Dimension", Default = false })
 Toggle:OnChanged(function(Value)
     getgenv().AutoFrozenDimension = Value
 end)
@@ -6072,13 +6064,13 @@ task.spawn(function()
         end
     end
 end)
-ChooseSkill = Window:AddTab({ Title = "Tab Setting Select Skill", Icon = "" })
+ChooseSkill = Window:AddTab({ Title = "Use Skill for Event", Icon = "" })
 ChooseSkill:AddParagraph({
     Title = "Setting Sea Event",
     Content = string.rep("-", 21)
 })
 ChooseSkill:AddParagraph({
-    Title = "Activating Skill Event,\nAnd Skill Leviathan Flawless Fusion",
+    Title = "Sử dụng Skill farm Event\n Skill Leviathan Flawless Fusion",
 })
 Toggle = ChooseSkill:AddToggle("Toggle", {
     Title = "Select Use Fruit",
@@ -6257,9 +6249,9 @@ task.spawn(function()
         end)
     end
 end)
-Volcanic = Window:AddTab({ Title = "Tab Volcanic Event", Icon = "" })
+Volcanic = Window:AddTab({ Title = "Volcanic Event", Icon = "" })
 Volcanic:AddButton({
-	Title = "Destroy Lava In Prehistoric Island",
+	Title = "Xoad Lava trên đảo Prehistoric",
 	Callback = function()
         for i,v in pairs(game.Workspace:GetDescendants()) do
 			if v.Name == "Lava" then   
@@ -6274,7 +6266,7 @@ Volcanic:AddButton({
 	end
 })
 Volcanic:AddButton({
-    Title = "Crafting Volcanic Magnet",
+    Title = "Auto chế Volcanic Magnet",
     Callback = function()
         local v395 = {
             [1] = "CraftItem",
@@ -6284,7 +6276,7 @@ Volcanic:AddButton({
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(v395))
     end
 })
-Toggle = Volcanic:AddToggle("MyToggle", {Title = "Teleport Prehistoric Island", Default = false })
+Toggle = Volcanic:AddToggle("MyToggle", {Title = "Teleport tới Prehistoric Island", Default = false })
 Toggle:OnChanged(function(Value)
     getgenv().TweenPrehistoric = Value
 end)
@@ -6309,7 +6301,7 @@ spawn(function()
     end
 end)
 Toggle = Volcanic:AddToggle("Toggle", {
-    Title = "Auto Event Volcano Island Defense",
+    Title = "Auto thủ đảo Volcano",
     Default = false
 })
 Toggle:OnChanged(function(value)
@@ -6507,13 +6499,13 @@ Toggle = Volcanic:AddToggle("Toggle", {
 Toggle:OnChanged(function(v404)
     getgenv().UseGun = v404
 end)
-Race = Window:AddTab({ Title = "Tab Upgrade Race", Icon = "" })
+Race = Window:AddTab({ Title = "Up Tộc", Icon = "" })
 Race:AddParagraph({
     Title = "Race Draco",
     Content = string.rep("-", 21)
 })
 local RunService = game:GetService("RunService")
-Toggle = Race:AddToggle("Toggle", {Title = "Teleport To The Draco Clan Trial Door", Default = false})
+Toggle = Race:AddToggle("Toggle", {Title = "Teleport tới Draco Trial Door", Default = false})
 Toggle:OnChanged(function(Value)
     getgenv().TrialTeleportDraco = Value
 end)
@@ -6537,7 +6529,7 @@ Race:AddParagraph({
     Title = "Race Normal",
     Content = string.rep("-", 21)
 })
-Toggle = Race:AddToggle("Toggle", {Title = "Auto Upgrade Race V2", Default = false })
+Toggle = Race:AddToggle("Toggle", {Title = "Auto Up Race V2", Default = false })
 Toggle:OnChanged(function(Value)
     getgenv().UpgradeRaceV2 = Value
 end)
@@ -6595,7 +6587,7 @@ spawn(function()
         end
     end)
 end)
-Toggle = Race:AddToggle("Toggle", {Title = "Auto Get Cyborg", Description = "Buy Chip And Kill Order", Default = false })
+Toggle = Race:AddToggle("Toggle", {Title = "Auto lấy tộc Người Máy", Description = "Buy Chip And Kill Order", Default = false })
 Toggle:OnChanged(function(Value)
     getgenv().AutoCyborg = Value
 end)
@@ -6651,7 +6643,7 @@ spawn(function()
         end
     end)
 end)
-Toggle = Race:AddToggle("Toggle", {Title = "Auto Get Ghoul", Default = false })
+Toggle = Race:AddToggle("Toggle", {Title = "Auto lấy tộc Ghoul", Default = false })
 Toggle:OnChanged(function(Value)
     getgenv().AutoGhoul = Value
 end)
@@ -6687,7 +6679,7 @@ Race:AddParagraph({
     Title = "Race V4",
     Content = string.rep("-", 21)
 })
-Toggle = Race:AddToggle("Toggle", {Title = "No Frog", Default = false})
+Toggle = Race:AddToggle("Toggle", {Title = "Xoá sương mù", Default = false})
 Toggle:OnChanged(function(Value)
     getgenv().NoFrog = Value
 end)
@@ -6710,7 +6702,7 @@ spawn(function()
         end
     end
 end)
-Toggle = Race:AddToggle("Toggle", {Title = "Teleport Ancient Clock", Default = false })
+Toggle = Race:AddToggle("Toggle", {Title = "Teleport tới Ancient Clock", Default = false })
 Toggle:OnChanged(function(Value)
     getgenv().TeleportAcientClock = Value
     StopTween(getgenv().TeleportAcientClock)
@@ -6723,7 +6715,7 @@ spawn(function()
         end
     end
 end)
-Toggle = Race:AddToggle("Toggle", {Title = "Auto Buy Gear", Default = false})
+Toggle = Race:AddToggle("Toggle", {Title = "Auto mua Gear", Default = false})
 Toggle:OnChanged(function(Value)
     getgenv().AutoBuyGear = Value    
 end)
@@ -6837,7 +6829,7 @@ task.spawn(function()
     end
 end)
 Pullever = Race:AddParagraph({
-    Title = "Pull Lever Done",
+    Title = "Status gạt cần",
     Content = "Status: "
 })
 spawn(function()
@@ -6855,7 +6847,7 @@ spawn(function()
         end
     end
 end)
-Toggle = Race:AddToggle("Toggle", { Title = "Teleport To Migare Island", Default = false })
+Toggle = Race:AddToggle("Toggle", { Title = "Teleport tới đảo Bí Ẩn", Default = false })
 Toggle:OnChanged(function(Value)
     getgenv().TeleportMigare = Value
     StopTween(getgenv().TeleportMigare)
@@ -6876,7 +6868,7 @@ spawn(function()
         end
     end)
 end)
-Toggle = Race:AddToggle("Toggle", { Title = "Teleport To Highest Point", Default = false })
+Toggle = Race:AddToggle("Toggle", { Title = "Teleport tới điểm cao Nhắt", Default = false })
 Toggle:OnChanged(function(Value)
     getgenv().Tweentohighestpoint = Value
     if not Value then
@@ -6896,7 +6888,7 @@ Toggle:OnChanged(function(Value)
         end
     end)
 end)
-Toggle = Race:AddToggle("Toggle", { Title = "Teleport To Advanced Fruit Dealer", Default = false })
+Toggle = Race:AddToggle("Toggle", { Title = "Teleport tới Advanced Fruit Dealer", Default = false })
 Toggle:OnChanged(function(Value)
     getgenv().TeleportAdvancedFruitDealer = Value
     if not Value then
@@ -6924,7 +6916,7 @@ Toggle:OnChanged(function(Value)
         end
     end)
 end)
-Toggle = Race:AddToggle("Toggle", { Title = "Lock Moon And On Race V3", Default = false })
+Toggle = Race:AddToggle("Toggle", { Title = "Nhìn trăng và Bật tộc V3", Default = false })
 Toggle:OnChanged(function(Value)
     getgenv().LockMoonAndOnRaceV3 = Value
     if not Value then
@@ -6955,7 +6947,7 @@ Toggle:OnChanged(function(Value)
         end
     end)
 end)
-Toggle = Race:AddToggle("Toggle", { Title = "Teleport To Blue Gear", Default = false })
+Toggle = Race:AddToggle("Toggle", { Title = "Teleport tới Blue Gear", Default = false })
 Toggle:OnChanged(function(Value)
     getgenv().TeleportToGear = Value
     StopTween(getgenv().TeleportToGear)
@@ -7121,7 +7113,7 @@ spawn(function()
         end
     end
 end)
-Get = Window:AddTab({ Title = "Tab Get Items And Buy", Icon = "" })
+Get = Window:AddTab({ Title = "Get Items And Buy", Icon = "" })
 Toggle = Get:AddToggle("Toggle", {Title = "Auto Trade Bone", Default = false})
 Toggle:OnChanged(function(Value)
     getgenv().AutoTradeBone = Value
@@ -7604,7 +7596,7 @@ spawn(function()
         end
     end
 end)
-ESP = Window:AddTab({ Title = "Tab ESP", Icon = "" })
+ESP = Window:AddTab({ Title = "ESP", Icon = "" })
 local RunService = game:GetService("RunService")
 local player = game:GetService("Players").LocalPlayer
 local IslandESP = false
@@ -7817,13 +7809,13 @@ Toggle:OnChanged(function(Value)
         end
     end
 end)
-PVP = Window:AddTab({ Title = "Tab PVP", Icon = "" })
+PVP = Window:AddTab({ Title = "PVP", Icon = "" })
 local Playerslist = {}
 for i, player in ipairs(game.Players:GetPlayers()) do
     Playerslist[i] = player.Name
 end    
 Dropdown = PVP:AddDropdown("Dropdown", {
-     Title = "Select Player PVP",
+     Title = "Người muốn PVP",
      Values = Playerslist,
      Multi = false,
      Default = false,
@@ -7832,7 +7824,7 @@ Dropdown:OnChanged(function(Value)
    getgenv().SelectPlayer = Value
 end)
 Toggle = PVP:AddToggle("MyToggle", {
-    Title = "Teleport Player",
+    Title = "Teleport tới người được chọn",
     Default = false
 })
 Toggle:OnChanged(function(Value)
@@ -7904,7 +7896,7 @@ spawn(function()
         end
     end
 end)
-Toggle = PVP:AddToggle("Toggle", {Title = "Safe Modes", Default = false })
+Toggle = PVP:AddToggle("Toggle", {Title = "Safe PVP Modes", Default = false })
 Toggle:OnChanged(function(Value)
     getgenv().SafeMode = Value
 end)
@@ -7936,7 +7928,7 @@ Slider = PVP:AddSlider("Slider", {
         getgenv().Safe = Value
     end
 })
-Toggle = PVP:AddToggle("Toggle", { Title = "Walk On Water", Default = true })
+Toggle = PVP:AddToggle("Toggle", { Title = "Đi trên nước", Default = true })
 Toggle:OnChanged(function(Value)
     getgenv().WalkWater = Value    
     local waterPlane = game:GetService("Workspace").Map["WaterBase-Plane"]
