@@ -1293,15 +1293,91 @@ function CheckBossDimension()
 end;
 
 L_33_ = loadstring(game:HttpGet("https://raw.githubusercontent.com/LuaCrack/Library/refs/heads/main/LibraryFluent.lua"))()
+-- Âm thanh khởi động
+local startupSound = Instance.new("Sound")
+startupSound.SoundId = "rbxassetid://8594342648"
+startupSound.Volume = 5 -- Điều chỉnh âm lượng nếu cần
+startupSound.Looped = false -- Không lặp lại âm thanh
+startupSound.Parent = game.CoreGui-- Đặt parent vào CoreGui để đảm bảo âm thanh phát
+startupSound:Play() -- Phát âm thanh khi script chạy
+-- Tạo cửa sổ chính
 Window = Fluent:CreateWindow({
     Title = "Yamoshi Project_BF (Beta~Hub) 1.0.?",
     SubTitle = "discord_id:-@thanhtaihy11",
     TabWidth = 155,
     Size = UDim2.fromOffset(555, 320),
-    Acrylic = false, 
-    Theme = "Black",
+    Acrylic = true, 
+    Theme = "Dark",
     MinimizeKey = Enum.KeyCode.LeftControl 
 })
+
+
+-- Tạo ScreenGui chứa nút điều khiển
+local screenGui = Instance.new("ScreenGui")
+screenGui.Name = "ControlGUI"
+screenGui.Parent = game.CoreGui
+
+-- Tạo nút (ImageButton)
+local toggleButton = Instance.new("ImageButton")
+toggleButton.Size = UDim2.new(0, 50, 0, 50) -- Kích thước nhỏ, hình vuông
+toggleButton.Position = UDim2.new(1, -60, 0, 10) -- Vị trí gần góc phải trên
+toggleButton.Image = "rbxassetid://7229442422" -- Hình ảnh của nút
+toggleButton.BackgroundTransparency = 1 -- Không có nền
+toggleButton.Parent = screenGui
+
+-- Biến lưu trạng thái hiển thị Fluent UI
+local isFluentVisible = true
+
+-- Di chuyển nút
+local dragging, dragInput, dragStart, startPos
+
+local function update(input)
+    local delta = input.Position - dragStart
+    toggleButton.Position = UDim2.new(
+        startPos.X.Scale,
+        startPos.X.Offset + delta.X,
+        startPos.Y.Scale,
+        startPos.Y.Offset + delta.Y
+    )
+end
+
+toggleButton.InputBegan:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.Touch or input.UserInputType == Enum.UserInputType.MouseButton1 then
+        dragging = true
+        dragStart = input.Position
+        startPos = toggleButton.Position
+        input.Changed:Connect(function()
+            if input.UserInputState == Enum.UserInputState.End then
+                dragging = false
+            end
+        end)
+    end
+end)
+
+toggleButton.InputChanged:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.Touch or input.UserInputType == Enum.UserInputType.MouseMovement then
+        dragInput = input
+    end
+end)
+
+game:GetService("UserInputService").InputChanged:Connect(function(input)
+    if dragging and input == dragInput then
+        update(input)
+    end
+end)
+
+-- Ẩn/Hiện Fluent UI khi nhấn nút
+toggleButton.MouseButton1Click:Connect(function()
+    isFluentVisible = not isFluentVisible
+
+    if isFluentVisible then
+        -- Hiện Fluent UI
+        Window:Minimize(false) -- Mở lại cửa sổ
+    else
+        -- Ẩn Fluent UI
+        Window:Minimize(true) -- Thu nhỏ cửa sổ
+    end
+end)
 
 MethodFarm = CFrame.new(0, 10, 10)
 local L_35_ = {
