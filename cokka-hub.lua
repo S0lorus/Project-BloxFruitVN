@@ -1291,16 +1291,18 @@ function CheckBossDimension()
 		end
 	end
 end;
-local L_33_ = loadstring(game:HttpGet("https://raw.githubusercontent.com/obfalchx/testfluent/refs/heads/main/FluentTrau"))();
-local L_34_ = L_33_:Window("25ms was here", Enum.KeyCode.LeftControl)
-print("|COKKA DEBUG| Anti AFK")
-game:GetService("Players").LocalPlayer.Idled:connect(function()
-	print("|COKKA DEBUG| AFK detected, prevented +1")
-	L_7_:ClickButton2(Vector2.new())
-	L_7_:Button2Down(Vector2.new(0, 0), workspace.CurrentCamera.CFrame)
-	wait(1)
-	L_7_:Button2Up(Vector2.new(0, 0), workspace.CurrentCamera.CFrame)
-end)
+
+L_33_ = loadstring(game:HttpGet("https://raw.githubusercontent.com/LuaCrack/Library/refs/heads/main/LibraryFluent.lua"))()
+Window = Fluent:CreateWindow({
+    Title = "Yamoshi Project_BF (Beta~Hub) 1.0.?",
+    SubTitle = "discord_id:-@thanhtaihy11",
+    TabWidth = 155,
+    Size = UDim2.fromOffset(555, 320),
+    Acrylic = false, 
+    Theme = "Black",
+    MinimizeKey = Enum.KeyCode.LeftControl 
+})
+
 MethodFarm = CFrame.new(0, 10, 10)
 local L_35_ = {
 	Main = L_34_:Tab("Main Farm"),
