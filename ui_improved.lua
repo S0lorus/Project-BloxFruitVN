@@ -38,20 +38,7 @@ local function ConnectButtonEffect(UIFrame:Frame&TextButton&ImageLabel,UIStroke:
 	local R,G,B = OldColor.R,OldColor.G,OldColor.B
 	local MainColor = Color3.fromHSV(R,G,B + int)
 
-	
-    UIFrame.InputBegan:Connect(function(Input)
-        if Input.UserInputType == Enum.UserInputType.MouseMovement then
-            TweenService:Create(UIFrame, TweenInfo.new(0.2), {BackgroundTransparency = 0.1}):Play()
-        end
-    end)
-    
-    UIFrame.InputEnded:Connect(function(Input)
-        if Input.UserInputType == Enum.UserInputType.MouseMovement then
-            TweenService:Create(UIFrame, TweenInfo.new(0.2), {BackgroundTransparency = 0.2}):Play()
-        end
-    end)
-    
-    UIFrame.InputBegan:Connect(function(Input)
+	UIFrame.InputBegan:Connect(function(Input)
 		if Input.UserInputType == Enum.UserInputType.Touch or Input.UserInputType == Enum.UserInputType.MouseMovement then
 			TweenService:Create(UIStroke,TweenInfo.new(0.2),{Color = MainColor}):Play()
 		end
@@ -128,14 +115,14 @@ end
 local NEVERLOSE = {
 	auto_function = {},
 	Themes = {
-		BlackgroundColor = Color3.fromRGB(30, 30, 30),
-		BlackColor = Color3.fromRGB(25, 25, 25),
-		HeaderColor = Color3.fromRGB(35, 35, 35),
+		BlackgroundColor = Color3.fromRGB(43, 43, 43),
+		BlackColor = Color3.fromRGB(16, 16, 16),
+		HeaderColor = Color3.fromRGB(47, 47, 47),
 		TraceColor = Color3.fromRGB(100, 100, 100),
-		MainColor = Color3.fromRGB(0, 162, 255),
+		MainColor = Color3.fromRGB(255, 140, 0),
 		MainColorDrop = Color3.fromRGB(65, 54, 31),
 		SectionColor = Color3.fromRGB(26, 26, 26),
-		StrokeColor = Color3.fromRGB(70, 70, 70),
+		StrokeColor = Color3.fromRGB(50, 50, 50),
 		ButtonBlackgroundColor = Color3.fromRGB(26, 26, 26)
 	},
 	_Version="10.C",
@@ -159,14 +146,14 @@ function NEVERLOSE:Theme(name)
 	end
 
 	if name == "nightly" then
-		NEVERLOSE.Themes.BlackgroundColor = Color3.fromRGB(30, 30, 30)
-		NEVERLOSE.Themes.BlackColor = Color3.fromRGB(25, 25, 25)
-		NEVERLOSE.Themes.HeaderColor = Color3.fromRGB(35, 35, 35)
+		NEVERLOSE.Themes.BlackgroundColor = Color3.fromRGB(43, 43, 43)
+		NEVERLOSE.Themes.BlackColor = Color3.fromRGB(16, 16, 16)
+		NEVERLOSE.Themes.HeaderColor = Color3.fromRGB(47, 47, 47)
 		NEVERLOSE.Themes.TraceColor = Color3.fromRGB(100, 100, 100)
-		NEVERLOSE.Themes.MainColor = Color3.fromRGB(0, 162, 255)
+		NEVERLOSE.Themes.MainColor = Color3.fromRGB(255, 140, 0)
 		NEVERLOSE.Themes.MainColorDrop = Color3.fromRGB(65, 54, 31)
 		NEVERLOSE.Themes.SectionColor = Color3.fromRGB(26, 26, 26)
-		NEVERLOSE.Themes.StrokeColor = Color3.fromRGB(70, 70, 70)
+		NEVERLOSE.Themes.StrokeColor = Color3.fromRGB(50, 50, 50)
 		NEVERLOSE.Themes.ButtonBlackgroundColor = Color3.fromRGB(26, 26, 26)
 	end
 
@@ -631,7 +618,7 @@ function NEVERLOSE:AddWindow(NameScriptHub,Text,UICustomSize)
 		UIAspectRatioConstraint.AspectRatio = 4.000
 		UIAspectRatioConstraint.AspectType = Enum.AspectType.ScaleWithParentSize
 
-		UICorner.CornerRadius = UDim.new(0, 6)
+		UICorner.CornerRadius = UDim.new(0, 3)
 		UICorner.Parent = TabButton
 
 		Image.Name = "Image"
@@ -652,7 +639,7 @@ function NEVERLOSE:AddWindow(NameScriptHub,Text,UICustomSize)
 
 		GetImageData(tostring(IconType),Image)
 
-		UICorner_2.CornerRadius = UDim.new(0, 6)
+		UICorner_2.CornerRadius = UDim.new(0, 3)
 		UICorner_2.Parent = Image
 
 		Label.Name = "Label"
@@ -807,7 +794,7 @@ function NEVERLOSE:AddWindow(NameScriptHub,Text,UICustomSize)
 			Section.Size = UDim2.new(0.970000029, 0, 0, 0)
 			Section.ZIndex = 5
 
-			UICorner.CornerRadius = UDim.new(0, 6)
+			UICorner.CornerRadius = UDim.new(0, 3)
 			UICorner.Parent = Section
 
 			UIStroke.Color = NEVERLOSE.Themes.StrokeColor
@@ -855,7 +842,7 @@ function NEVERLOSE:AddWindow(NameScriptHub,Text,UICustomSize)
 			TweenService:Create(UIStroke,TweenInfo.new(1),{Transparency=0}):Play()
 
 			local section_value = true
-			UICorner_2.CornerRadius = UDim.new(0, 6)
+			UICorner_2.CornerRadius = UDim.new(0, 3)
 			UICorner_2.Parent = lay
 
 			local function update_section_size(va)
@@ -933,7 +920,7 @@ function NEVERLOSE:AddWindow(NameScriptHub,Text,UICustomSize)
 				UIAspectRatioConstraint.AspectRatio = 7.000
 				UIAspectRatioConstraint.AspectType = Enum.AspectType.ScaleWithParentSize
 
-				UICorner.CornerRadius = UDim.new(0, 6)
+				UICorner.CornerRadius = UDim.new(0, 3)
 				UICorner.Parent = Button
 
 				LabelText.Name = "LabelText"
@@ -1002,7 +989,7 @@ function NEVERLOSE:AddWindow(NameScriptHub,Text,UICustomSize)
 				UIAspectRatioConstraint.AspectRatio = 6.000
 				UIAspectRatioConstraint.AspectType = Enum.AspectType.ScaleWithParentSize
 
-				UICorner.CornerRadius = UDim.new(0, 6)
+				UICorner.CornerRadius = UDim.new(0, 3)
 				UICorner.Parent = Label
 
 				LabelText.Name = "LabelText"
@@ -1082,7 +1069,7 @@ function NEVERLOSE:AddWindow(NameScriptHub,Text,UICustomSize)
 				UIAspectRatioConstraint.AspectRatio = 7.000
 				UIAspectRatioConstraint.AspectType = Enum.AspectType.ScaleWithParentSize
 
-				UICorner.CornerRadius = UDim.new(0, 6)
+				UICorner.CornerRadius = UDim.new(0, 3)
 				UICorner.Parent = Toggle
 
 				LabelText.Name = "LabelText"
@@ -1218,7 +1205,7 @@ function NEVERLOSE:AddWindow(NameScriptHub,Text,UICustomSize)
 				UIAspectRatioConstraint.AspectRatio = 7.000
 				UIAspectRatioConstraint.AspectType = Enum.AspectType.ScaleWithParentSize
 
-				UICorner.CornerRadius = UDim.new(0, 6)
+				UICorner.CornerRadius = UDim.new(0, 3)
 				UICorner.Parent = Keybind
 
 				LabelText.Name = "LabelText"
@@ -1250,7 +1237,7 @@ function NEVERLOSE:AddWindow(NameScriptHub,Text,UICustomSize)
 				BrindText.Size = UDim2.new(0.150000006, 0, 0.5, 0)
 				BrindText.ZIndex = 6
 
-				UICorner_2.CornerRadius = UDim.new(0, 6)
+				UICorner_2.CornerRadius = UDim.new(0, 3)
 				UICorner_2.Parent = BrindText
 
 				UIStroke.Thickness = 0.500
@@ -1369,7 +1356,7 @@ function NEVERLOSE:AddWindow(NameScriptHub,Text,UICustomSize)
 				UIAspectRatioConstraint.AspectRatio = 7.000
 				UIAspectRatioConstraint.AspectType = Enum.AspectType.ScaleWithParentSize
 
-				UICorner.CornerRadius = UDim.new(0, 6)
+				UICorner.CornerRadius = UDim.new(0, 3)
 				UICorner.Parent = Slider
 
 				LabelText.Name = "LabelText"
@@ -1402,7 +1389,7 @@ function NEVERLOSE:AddWindow(NameScriptHub,Text,UICustomSize)
 				Box.Size = UDim2.new(0.150000006, 0, 0.5, 0)
 				Box.ZIndex = 6
 
-				UICorner_2.CornerRadius = UDim.new(0, 6)
+				UICorner_2.CornerRadius = UDim.new(0, 3)
 				UICorner_2.Parent = Box
 
 				UIStroke.Thickness = 0.500
@@ -1438,7 +1425,7 @@ function NEVERLOSE:AddWindow(NameScriptHub,Text,UICustomSize)
 				MoveFrame.Size = UDim2.new(0.290949076, 0, 0.099999994, 0)
 				MoveFrame.ZIndex = 5
 
-				UICorner_3.CornerRadius = UDim.new(0, 6)
+				UICorner_3.CornerRadius = UDim.new(0, 3)
 				UICorner_3.Parent = MoveFrame
 
 				Inline.Name = "Inline"
@@ -1451,7 +1438,7 @@ function NEVERLOSE:AddWindow(NameScriptHub,Text,UICustomSize)
 				Inline.Size = UDim2.new((Default/Max), 0, 1, 0)
 				Inline.ZIndex = 5
 
-				UICorner_4.CornerRadius = UDim.new(0, 6)
+				UICorner_4.CornerRadius = UDim.new(0, 3)
 				UICorner_4.Parent = Inline
 
 				Cir.Name = "Cir"
@@ -1565,7 +1552,7 @@ function NEVERLOSE:AddWindow(NameScriptHub,Text,UICustomSize)
 				UIAspectRatioConstraint.AspectRatio = 7.000
 				UIAspectRatioConstraint.AspectType = Enum.AspectType.ScaleWithParentSize
 
-				UICorner.CornerRadius = UDim.new(0, 6)
+				UICorner.CornerRadius = UDim.new(0, 3)
 				UICorner.Parent = Dropdown
 
 				LabelText.Name = "LabelText"
@@ -1598,7 +1585,7 @@ function NEVERLOSE:AddWindow(NameScriptHub,Text,UICustomSize)
 				TopBar.Size = UDim2.new(0.313529521, 0, 0.5, 0)
 				TopBar.ZIndex = 6
 
-				UICorner_2.CornerRadius = UDim.new(0, 6)
+				UICorner_2.CornerRadius = UDim.new(0, 3)
 				UICorner_2.Parent = TopBar
 
 				UIStroke.Thickness = 0.500
@@ -1655,7 +1642,7 @@ function NEVERLOSE:AddWindow(NameScriptHub,Text,UICustomSize)
 				DownBar.Visible = false
 				DownBar.ZIndex = 10
 
-				UICorner_3.CornerRadius = UDim.new(0, 6)
+				UICorner_3.CornerRadius = UDim.new(0, 3)
 				UICorner_3.Parent = DownBar
 
 				UIStroke_2.Thickness = 0.500
@@ -1983,7 +1970,7 @@ function NEVERLOSE:KeySystem(TitleName,LinkKey,callback)
 	UIStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
 	UIStroke.Parent = PasteKey
 
-	UICorner_3.CornerRadius = UDim.new(0, 6)
+	UICorner_3.CornerRadius = UDim.new(0, 3)
 	UICorner_3.Parent = PasteKey
 
 	CopyKey.Name = "CopyKey"
@@ -2008,7 +1995,7 @@ function NEVERLOSE:KeySystem(TitleName,LinkKey,callback)
 	UIStroke_2.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
 	UIStroke_2.Parent = CopyKey
 
-	UICorner_4.CornerRadius = UDim.new(0, 6)
+	UICorner_4.CornerRadius = UDim.new(0, 3)
 	UICorner_4.Parent = CopyKey
 
 	Submit.Name = "Submit"
@@ -2033,7 +2020,7 @@ function NEVERLOSE:KeySystem(TitleName,LinkKey,callback)
 	UIStroke_3.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
 	UIStroke_3.Parent = Submit
 
-	UICorner_5.CornerRadius = UDim.new(0, 6)
+	UICorner_5.CornerRadius = UDim.new(0, 3)
 	UICorner_5.Parent = Submit
 
 	TweenService:Create(Frame,TweenInfo.new(0.4,Enum.EasingStyle.Quint),{Size=UDim2.new(0.25, 0, 0.25, 0)}):Play()
@@ -2186,7 +2173,7 @@ function NEVERLOSE:Notification()
 		Notify.ClipsDescendants = true
 		Notify.Size = UDim2.new(0.75,0,0,0)
 
-		UICorner.CornerRadius = UDim.new(0, 6)
+		UICorner.CornerRadius = UDim.new(0, 3)
 		UICorner.Parent = Notify
 
 		UIStroke.Color = NEVERLOSE.Themes.StrokeColor
